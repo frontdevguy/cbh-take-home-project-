@@ -26,12 +26,81 @@ Acceptance Criteria:
 2. As a facility manager, I should be able to assign an id to a particular agent in the system. This ID is should be unique accros the facility
 3. As a facility manager, I should be able to unassign/remove an id attached to a particular agent
 
-Implementation:
+Implementation Details:
 
 - Develop API that returns the list of all agents in the system
 
   ```
   [{
-
+    name: "Agent Name",
+    email: "agent@system.com"
+    internal_id: "agent-1",
   }]
   ```
+- Develop API that assigns a particular id to an agent
+
+  ```
+    Request Body: 
+    {
+       agent_facility_id: "12345",
+       facility_id: "facility-1",
+       internal_id: "agent-1"
+    }
+
+  ```
+ This API would write to a new table that saves the mapping of the agent facility id, assigned agent id, and the internal agent id
+ 
+ 
+- Develop API that unassigns a particular id to an agent
+
+  ```
+    Request Body: 
+    {
+       agent_facility_id: "12345",
+       facility_id: "facility-1",
+    }
+
+  ```
+ This API would write to a new table that saves the mapping of the agent facility id, assigned agent id, and the internal agent id
+
+
+Time Effort: 6 - 8 hours
+
+
+
+#Ticket 2:
+
+Write a new function `getAgentShiftsByFacilityId` which would take the agent id and facility id as paramenter and be return all the shifts of the specific agent.
+
+Acceptance Criteria:
+
+1. Takes facility_agent_id and facillity_id as parameters and return and array of shifts along side the assigned agent id and their meta data
+
+Implementation Details:
+
+- Do a find of the facility id and facility_agent_id in the new table to get the agent internal id. 
+- Do a join to the shift table using the internal agent id to get the shifts of the specific agent
+- Do a join to the agent table to get their meta
+- Return the joined data
+
+
+Time Effort: 4 - 5  hours
+
+
+
+#Ticket 3:
+
+Modify function `generateReport` include the agent facility id in the generated report.
+
+Acceptance Criteria:
+
+1. A column `agent_facility_id` should be present in the pdf showing the facility id of the agent
+
+Implementation Details:
+
+- Add a column `agent_facility_id` to the generated pdf
+
+
+Time Effort: 3 - 5  hours
+
+
