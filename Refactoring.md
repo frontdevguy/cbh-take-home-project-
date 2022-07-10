@@ -10,4 +10,4 @@ You will be graded on the exhaustiveness and quality of your unit tests, the dep
 
 ## Your Explanation Here
 
-I made the choices to have the code as refectored as such because it makes the code easier to be read from top to bottom and removes the need of having a nested if/esle block statements.
+I made the choices to have the code as refectored as such because there were too many nested if/else blocks. The refactored code is much more easier to read syntactically because of the introduction of optional chaining which helped to remove the nested if/esle block statements. It's also easier to read because each block statements now does only one operation as opposed to doing many in on if block statement
