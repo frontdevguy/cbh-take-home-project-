@@ -16,7 +16,7 @@ You will be graded on the level of detail in each ticket, the clarity of the exe
 
 ## Your Breakdown Here
 
-#Ticket 1:
+### Ticket 1:
 
 As a facility manager over seeing a facility, I want to be to assign agents to our facility by proving id for specific agents in the system.
 
@@ -68,7 +68,7 @@ Time Effort: 6 - 8 hours
 
 
 
-#Ticket 2:
+### Ticket 2:
 
 Write a new function `getAgentShiftsByFacilityId` which would take the agent id and facility id as paramenter and be return all the shifts of the specific agent.
 
@@ -87,8 +87,7 @@ Implementation Details:
 Time Effort: 4 - 5  hours
 
 
-
-#Ticket 3:
+### Ticket 3:
 
 Modify function `generateReport` include the agent facility id in the generated report.
 
